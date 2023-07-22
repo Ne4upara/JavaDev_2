@@ -14,20 +14,25 @@ public class SumCalculatorTest {
 
     @Test
     public void testThatNegative(){
-        Assertions.assertThrows(IllegalArgumentException.class, () -> calc.sum(0));
+        int actual = -1;
+        Assertions.assertThrows(IllegalArgumentException.class, () -> calc.sum(actual));
     }
 
     @Test
     public void testThat1SumCalculator(){
-        Assertions.assertEquals(1, calc.sum(1));
+        int actual = 1;
+        int expected = calc.sum(actual);
+        Assertions.assertEquals(1, expected);
     }
     @Test
     public void testThat2SumCalculator(){
-        Assertions.assertEquals(6, calc.sum(3));    }
+        int actual = 3;
+        int expected = calc.sum(actual);
+        Assertions.assertEquals(6, expected);    }
 
     @Test
     public void testThatMaxInput(){
-        Assertions.assertThrows(IllegalArgumentException.class, () -> calc.sum(65537));
+        int actual = 65537 ;
+        Assertions.assertThrows(IllegalArgumentException.class, () -> calc.sum(actual));
     }
-
 }
